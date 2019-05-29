@@ -1,1 +1,3 @@
-# Ansible playbook to configure Ubuntu 18 on my Tuxedo notebook
+# configure-tuxedo-ubuntu-18
+
+Ansible playbook to configure Ubuntu 18 on my Tuxedo notebook
