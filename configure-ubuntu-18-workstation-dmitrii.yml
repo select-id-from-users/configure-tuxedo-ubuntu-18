@@ -157,3 +157,24 @@
   - name: Install Slack
     apt:
       deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.0-amd64.deb
+
+  - name: Fix audio 1 or 3
+    become: yes
+    lineinfile:
+      path: /etc/modprobe.d/alsa-base.conf
+      regexp: 'options.*snd-hda-intel.*single_cmd=1'
+      line: options snd-hda-intel single_cmd=1
+
+  - name: Fix audio 2 or 3
+    become: yes
+    lineinfile:
+      path: /etc/modprobe.d/alsa-base.conf
+      regexp: 'options.*snd-hda-intel.*probe_mask=1'
+      line: options snd-hda-intel probe_mask=1
+
+  - name: Fix audio 3 or 3
+    become: yes
+    lineinfile:
+      path: /etc/modprobe.d/alsa-base.conf
+      regexp: 'options.*snd-hda-intel.*model=basic'
+      line: options snd-hda-intel model=basic
