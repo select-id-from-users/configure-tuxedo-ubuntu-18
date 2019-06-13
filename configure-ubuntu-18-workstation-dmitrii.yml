@@ -25,6 +25,14 @@
       - keepassx
       - rdesktop
 
+  - name: Make vim the default editor
+    become: no
+    lineinfile:
+      create: yes
+      path: ~/.selected_editor
+      regexp: 'SELECTED'
+      line: SELECTED_EDITOR="/usr/bin/vim.basic"
+
   - name: Remove useless packages from the cache
     apt:
       autoclean: yes
