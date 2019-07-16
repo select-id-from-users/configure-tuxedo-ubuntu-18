@@ -186,3 +186,12 @@
       path: /etc/modprobe.d/alsa-base.conf
       regexp: 'options.*snd-hda-intel.*model=basic'
       line: options snd-hda-intel model=basic
+
+  - name : Download and unarchive Terraform 0.12.4
+    become: no
+    tags:
+      - terraform
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/0.12.4/terraform_0.12.4_linux_amd64.zip
+      dest: ~/.local/bin/
+      remote_src: yes
