@@ -96,6 +96,8 @@
       force: yes
 
   - name: Create ~/.vim/autoload directory
+    tags:
+      - vim
     become: no
     file:
       path: ~/.vim/autoload
@@ -103,6 +105,8 @@
       mode: 0755
 
   - name: Create ~/.vim/bundle directory
+    tags:
+      - vim
     become: no
     file:
       path: ~/.vim/bundle
@@ -110,6 +114,8 @@
       mode: 0755
 
   - name: Create ~/.vim/undo directory
+    tags:
+      - vim
     become: no
     file:
       path: ~/.vim/undo
@@ -117,6 +123,8 @@
       mode: 0755
 
   - name: Download pathogen.vim
+    tags:
+      - vim
     become: no
     get_url:
       url: https://tpo.pe/pathogen.vim
@@ -125,6 +133,8 @@
       force: yes
 
   - name: Install vim-colors-solarized
+    tags:
+      - vim
     become: no
     git:
       repo: 'https://github.com/altercation/vim-colors-solarized.git'
@@ -134,6 +144,8 @@
       update: no
 
   - name: Install vim-airline
+    tags:
+      - vim
     become: no
     git:
       repo: 'https://github.com/vim-airline/vim-airline.git'
