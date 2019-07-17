@@ -171,7 +171,7 @@
 
   - name: Install Slack
     apt:
-      deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.0-amd64.deb
+      deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb
 
   - name: Fix audio 1 or 3
     become: yes
