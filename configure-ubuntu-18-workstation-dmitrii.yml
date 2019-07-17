@@ -102,12 +102,6 @@
       state: directory
       mode: 0755
 
-  - name: Delete ~/.vim/bundle directory  # delete is required because ansible git module does not clone into existing dirs
-    become: no
-    file:
-      state: absent
-      path: ~/.vim/bundle
-
   - name: Create ~/.vim/bundle directory
     become: no
     file:
