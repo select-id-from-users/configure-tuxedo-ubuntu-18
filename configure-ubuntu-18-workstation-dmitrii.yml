@@ -24,6 +24,7 @@
       - nvidia-driver-430
       - keepassx
       - rdesktop
+      - network-manager-l2tp-gnome # for tutti VPN
 
   - name: Make vim the default editor
     become: no
