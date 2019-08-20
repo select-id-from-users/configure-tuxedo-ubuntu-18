@@ -25,6 +25,7 @@
       - keepassx
       - rdesktop
       - network-manager-l2tp-gnome # for tutti VPN
+      - python3-venv
 
   - name: Make vim the default editor
     become: no
