@@ -158,6 +158,9 @@
   - name: Install Pycharm from snap
     shell: snap install pycharm-community --classic
 
+  - name: Install VSCode
+    shell: snap install code --classic
+
 
   - name: Create a directory for Gnome shells
     become: no
