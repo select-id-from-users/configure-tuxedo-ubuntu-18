@@ -26,6 +26,9 @@
       - rdesktop
       - network-manager-l2tp-gnome # for tutti VPN
       - python3-venv
+      - twine
+      - curl
+      - httpie
 
   - name: Make vim the default editor
     become: no
