@@ -184,7 +184,7 @@
 
   - name: Install Slack
     apt:
-      deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.1-amd64.deb
+      deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
 
   - name: Install dbeaver
     apt:
