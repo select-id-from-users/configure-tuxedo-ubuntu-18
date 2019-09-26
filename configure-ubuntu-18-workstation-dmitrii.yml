@@ -75,6 +75,14 @@
       scope: global
       value: vim
 
+  - name: Install vimrc
+    become: no
+    get_url:
+      url: https://raw.githubusercontent.com/Dmitrii-I/configs/master/vimrc
+      dest: ~/.vimrc
+      mode: 0600
+      force: yes
+
   - name: Download bashrc
     become: no
     get_url:
