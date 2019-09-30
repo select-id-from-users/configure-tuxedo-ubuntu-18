@@ -30,14 +30,6 @@
       - curl
       - httpie
 
-  - name: Delete the Ubuntu pre-installed `cw` because its name collides with https://github.com/lucagrulla/cw/  that we install later on.
-    become: yes
-    apt:
-      name: cw
-      state: absent
-      autoclean: yes
-      autoremove: yes
-
   - name: Make vim the default editor
     become: no
     lineinfile:
