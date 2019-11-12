@@ -255,7 +255,7 @@
     tags:
       - terraform
     unarchive:
-      src: https://releases.hashicorp.com/terraform/0.12.4/terraform_0.12.4_linux_amd64.zip
+      src: https://releases.hashicorp.com/terraform/0.12.13/terraform_0.12.13_linux_amd64.zip
       dest: ~/.local/bin/
       remote_src: yes
 
