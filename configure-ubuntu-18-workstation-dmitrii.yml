@@ -215,10 +215,15 @@
 
   # Run `apt purge cw --autoremove --yes` first, if you have the original Ubuntu `cw` Morse code tutor utility installed.
   - name: Install `cw` utility to tail AWS CloudWatch logs
+    become: yes
     tags:
       - cw
-    apt:
-      deb: https://github.com/lucagrulla/cw/releases/download/v3.2.3/cw_amd64.deb
+    shell: |
+      apt purge cw --autoremove --yes  # delete `cw` first, which could still be the original Ubuntu Morse code utility
+      TEMP_DEB="$(mktemp)"
+      wget -O "$TEMP_DEB" 'https://github.com/lucagrulla/cw/releases/download/v3.2.3/cw_amd64.deb'
+      dpkg -i "$TEMP_DEB"
+      rm -f "$TEMP_DEB"
 
   - name: Install dbeaver
     apt:
