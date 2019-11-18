@@ -250,12 +250,12 @@
       regexp: 'options.*snd-hda-intel.*model=basic'
       line: options snd-hda-intel model=basic
 
-  - name : Download and unarchive Terraform 0.12.4
+  - name : Download and unarchive Terraform
     become: no
     tags:
       - terraform
     unarchive:
-      src: https://releases.hashicorp.com/terraform/0.12.13/terraform_0.12.13_linux_amd64.zip
+      src: https://releases.hashicorp.com/terraform/0.12.15/terraform_0.12.15_linux_amd64.zip
       dest: ~/.local/bin/
       remote_src: yes
 
