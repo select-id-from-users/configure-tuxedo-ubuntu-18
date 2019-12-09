@@ -213,18 +213,6 @@
     apt:
       deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb
 
-  # Run `apt purge cw --autoremove --yes` first, if you have the original Ubuntu `cw` Morse code tutor utility installed.
-  - name: Install `cw` utility to tail AWS CloudWatch logs
-    become: yes
-    tags:
-      - cw
-    shell: |
-      apt purge cw --autoremove --yes  # delete `cw` first, which could still be the original Ubuntu Morse code utility
-      TEMP_DEB="$(mktemp)"
-      wget -O "$TEMP_DEB" 'https://github.com/lucagrulla/cw/releases/download/v3.2.3/cw_amd64.deb'
-      dpkg -i "$TEMP_DEB"
-      rm -f "$TEMP_DEB"
-
   - name: Install dbeaver
     apt:
       deb: https://github.com/dbeaver/dbeaver/releases/download/6.3.0/dbeaver-ce_6.3.0_amd64.deb
