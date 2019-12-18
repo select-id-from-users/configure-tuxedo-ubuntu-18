@@ -258,3 +258,10 @@
       dest: /usr/local/bin
       remote_src: yes
 
+  - name: Install 1Password command line utility
+    become: yes
+    unarchive:
+      src: https://cache.agilebits.com/dist/1P/op/pkg/v0.8.0/op_linux_amd64_v0.8.0.zip
+      dest: /usr/local/bin
+      remote_src: yes
+
