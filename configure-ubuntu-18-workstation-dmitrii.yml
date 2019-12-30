@@ -265,3 +265,11 @@
       dest: /usr/local/bin
       remote_src: yes
 
+
+  - name: Increase inotify watches limit for PyCharm
+    become: yes
+    sysctl:
+      name: fs.inotify.max_user_watches
+      value: '524288'
+      state: present
+
