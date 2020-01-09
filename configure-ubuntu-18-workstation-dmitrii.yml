@@ -29,6 +29,7 @@
       - twine
       - curl
       - httpie
+      - tree
 
   - name: Make vim the default editor
     become: no
