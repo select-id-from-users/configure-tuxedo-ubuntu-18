@@ -30,6 +30,7 @@
       - curl
       - httpie
       - tree
+      - gnome-tweak-tool
 
   - name: Make vim the default editor
     become: no
