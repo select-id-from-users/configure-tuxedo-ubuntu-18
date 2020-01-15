@@ -275,3 +275,26 @@
       value: '524288'
       state: present
 
+  - name: Create ~/.fonts directory
+    tags:
+      - fonts
+    become: no
+    file:
+      path: ~/.fonts
+      state: directory
+      mode: 0755
+
+  - name: Install JetBrains Mono font
+    tags:
+      - fonts
+    become: no
+    unarchive:
+      src: https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip
+      dest: ~/.fonts/
+      remote_src: yes
+
+  - name: Update fonts cache
+    become: yes
+    tags:
+      - fonts
+    shell: fc-cache --force
