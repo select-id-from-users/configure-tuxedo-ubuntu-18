@@ -293,6 +293,15 @@
       dest: ~/.fonts/
       remote_src: yes
 
+  - name: Install B612 mono font
+    tags:
+      - fonts
+    become: no
+    unarchive:
+      src: https://fonts.google.com/download?family=B612%20Mono
+      dest: ~/.fonts/
+      remote_src: yes
+
   - name: Update fonts cache
     become: yes
     tags:
