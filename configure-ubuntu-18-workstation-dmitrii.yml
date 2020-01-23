@@ -219,8 +219,11 @@
       deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb
 
   - name: Install dbeaver
+    become: yes
+    tags:
+      - dbeaver
     apt:
-      deb: https://github.com/dbeaver/dbeaver/releases/download/6.3.0/dbeaver-ce_6.3.0_amd64.deb
+      deb: https://github.com/dbeaver/dbeaver/releases/download/6.3.3/dbeaver-ce_6.3.3_amd64.deb
 
   - name: Fix audio 1 or 3
     become: yes
