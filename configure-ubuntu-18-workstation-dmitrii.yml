@@ -32,6 +32,26 @@
       - tree
       - gnome-tweak-tool
 
+  - name: Add alias dp (connect to pgcl1-dev db1 as postgres)
+    tags:
+      - bashrc
+    become: no
+    lineinfile:
+      create: yes
+      path: ~/.bashrc_local
+      regexp: 'alias dp'
+      line: alias dp='~/tutti-dw/pgcl1/psql-as-postgres-user.sh dev'
+
+  - name: Add alias dm (connect to pgcl1-dev db1 as myself)
+    tags:
+      - bashrc
+    become: no
+    lineinfile:
+      create: yes
+      path: ~/.bashrc_local
+      regexp: 'alias dm'
+      line: alias dm='~/tutti-dw/pgcl1/psql-as-my-user.sh dev'
+
   - name: Make vim the default editor
     become: no
     lineinfile:
