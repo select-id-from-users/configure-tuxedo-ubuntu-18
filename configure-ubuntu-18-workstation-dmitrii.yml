@@ -13,6 +13,9 @@
       update_cache: yes
 
   - name: Install a list of packages
+    become: yes
+    tags:
+      - apt
     apt:
       name: "{{ packages }}"
     vars:
@@ -31,6 +34,7 @@
       - httpie
       - tree
       - gnome-tweak-tool
+      - shellcheck
 
   - name: Add alias dp (connect to pgcl1-dev db1 as postgres)
     tags:
