@@ -109,6 +109,8 @@
       force: yes
 
   - name: Download bashrc
+    tags:
+      - bashrc
     become: no
     get_url:
       url: https://raw.githubusercontent.com/Dmitrii-I/configs/master/bashrc
@@ -117,6 +119,9 @@
       force: yes
 
   - name: Download bash_profile
+    tags:
+      - bashrc
+      - bash_profile
     become: no
     get_url:
       url: https://raw.githubusercontent.com/Dmitrii-I/configs/master/bashrc
