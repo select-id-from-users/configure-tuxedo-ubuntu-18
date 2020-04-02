@@ -57,6 +57,8 @@
       line: alias dm='~/tutti-dw/pgcl1/psql-as-my-user.sh dev'
 
   - name: Make vim the default editor
+    tags:
+      - vim
     become: no
     lineinfile:
       create: yes
@@ -87,6 +89,9 @@
       value: "{{ git_user_email }}"
 
   - name: Set git editor
+    tags:
+      - vim
+      - git
     become: no
     git_config:
       name: core.editor
@@ -94,6 +99,8 @@
       value: vim
 
   - name: Install vimrc
+    tags:
+      - vim
     become: no
     get_url:
       url: https://raw.githubusercontent.com/Dmitrii-I/configs/master/vimrc
