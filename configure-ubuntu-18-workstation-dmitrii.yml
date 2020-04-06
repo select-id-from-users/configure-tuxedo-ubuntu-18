@@ -56,6 +56,26 @@
       regexp: 'alias dm'
       line: alias dm='~/tutti-dw/pgcl1/psql-as-my-user.sh dev'
 
+  - name: Add alias rs (connect to redshift)
+    tags:
+      - bashrc
+    become: no
+    lineinfile:
+      create: yes
+      path: ~/.bashrc_local
+      regexp: 'alias rs'
+      line: alias rs='~/tutti-dw/redshift-dw/rs.sh'
+
+  - name: Add alias rsrun (run an sql script on redshift)
+    tags:
+      - bashrc
+    become: no
+    lineinfile:
+      create: yes
+      path: ~/.bashrc_local
+      regexp: 'alias rsrun'
+      line: alias rsrun='~/tutti-dw/redshift-dw/rsrun.sh'
+
   - name: Make vim the default editor
     tags:
       - vim
