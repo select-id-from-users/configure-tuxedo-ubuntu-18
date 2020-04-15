@@ -312,8 +312,11 @@
       remote_src: yes
 
   - name: Install RStudio
+    become: yes
+    tags:
+      - rstudio
     apt:
-      deb: https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5033-amd64.deb
+      deb: https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
 
   - name: Install fzf binary
     become: yes
