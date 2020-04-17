@@ -36,6 +36,17 @@
       - gnome-tweak-tool
       - shellcheck
 
+  - name: Add alias R
+    tags:
+      - bashrc
+    become: no
+    lineinfile:
+      create: yes
+      path: ~/.bashrc_local
+      regexp: 'alias R'
+      line: alias R='R --no-save'
+      state: present
+
   - name: Add alias dp (connect to pgcl1-dev db1 as postgres)
     tags:
       - bashrc
