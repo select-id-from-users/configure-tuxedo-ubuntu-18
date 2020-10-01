@@ -35,6 +35,7 @@
       - tree
       - gnome-tweak-tool
       - shellcheck
+      - direnv
 
   - name: Add alias R
     tags:
