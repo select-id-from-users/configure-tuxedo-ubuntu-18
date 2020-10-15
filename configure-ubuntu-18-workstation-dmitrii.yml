@@ -12,6 +12,21 @@
     apt:
       update_cache: yes
 
+  - name: Uninstall a list of packages
+    become: yes
+    tags:
+      - apt
+    apt:
+      name: "{{ packages }}"
+      state: absent
+    vars:
+      packages:
+        - nodejs
+        - nodejs-dev
+        - npm
+        - node-gyp
+        - libssl1.0-dev
+
   - name: Install a list of packages
     become: yes
     tags:
@@ -36,11 +51,6 @@
       - gnome-tweak-tool
       - shellcheck
       - direnv
-      - nodejs
-      - nodejs-dev
-      - npm
-      - node-gyp
-      - libssl1.0-dev
 
   - name: Add alias R
     tags:
