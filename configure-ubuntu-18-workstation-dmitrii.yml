@@ -36,6 +36,11 @@
       - gnome-tweak-tool
       - shellcheck
       - direnv
+      - nodejs
+      - nodejs-dev
+      - npm
+      - node-gyp
+      - libssl1.0-dev
 
   - name: Add alias R
     tags:
