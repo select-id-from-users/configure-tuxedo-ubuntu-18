@@ -13,6 +13,6 @@ ansible-playbook configure-ubuntu-18-workstation-dmitrii.yml \
     --verbose \
     --extra-vars git_user_name=select-id-from-users \
     --extra-vars git_user_email=${USER}@tutti.ch \
-    --extra-vars wireguard_private_key "abc123....="
+    --extra-vars wireguard_private_key="abc123....="
 ```
 
