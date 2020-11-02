@@ -51,6 +51,7 @@
       - gnome-tweak-tool
       - shellcheck
       - direnv
+      - wireguard
 
   - name: Add alias R
     tags:
