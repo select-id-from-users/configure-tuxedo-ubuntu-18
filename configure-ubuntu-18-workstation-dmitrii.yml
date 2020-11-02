@@ -3,6 +3,16 @@
 
   tasks:
 
+
+  - name: Install wireguard config of tutti's wireguard VPN
+    become: yes
+    tags:
+      - wireguard
+      - vpn
+    template:
+      src: tutti-wireguard-vpn.j2
+      dest: /etc/wireguard/tutti.conf
+
   - name: Add repo with nvidia drivers
     apt_repository:
       repo: ppa:graphics-drivers
@@ -52,6 +62,7 @@
       - shellcheck
       - direnv
       - wireguard
+      - openresolv  # to make wireguard work on Ubuntu 18
 
   - name: Add alias R
     tags:
