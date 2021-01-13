@@ -282,6 +282,12 @@
       force: yes
       update: no
 
+  - name: Install ripgrep from snap
+    become: yes
+    tags:
+      - ripgrep
+    shell: snap install ripgrep --classic
+
   - name: Install Pycharm from snap
     become: yes
     tags:
