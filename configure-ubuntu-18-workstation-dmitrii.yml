@@ -63,6 +63,7 @@
       - direnv
       - wireguard
       - openresolv  # to make wireguard work on Ubuntu 18
+      - fbreader  # epub reader
 
   - name: Add alias R
     tags:
