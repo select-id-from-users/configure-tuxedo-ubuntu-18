@@ -69,6 +69,7 @@
       - python3.8-venv
       - nodejs
       - openvpn
+      - traceroute
 
   - name: Add alias R
     tags:
