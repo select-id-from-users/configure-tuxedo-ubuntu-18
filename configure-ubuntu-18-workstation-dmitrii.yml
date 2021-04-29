@@ -368,7 +368,7 @@
     tags:
       - rstudio
     apt:
-      deb: https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.4.1103-amd64.deb
+      deb: https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.4.1106-amd64.deb
 
   - name: Install fzf binary
     become: yes
