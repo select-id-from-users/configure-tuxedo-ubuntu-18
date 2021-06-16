@@ -59,6 +59,7 @@
       - openvpn
       - traceroute
       - simplescreenrecorder
+      - libxml2-utils  # to get xmllint
 
   - name: Add alias R
     tags:
