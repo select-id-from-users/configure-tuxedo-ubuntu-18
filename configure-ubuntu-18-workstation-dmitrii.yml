@@ -3,6 +3,14 @@
 
   tasks:
 
+  - name: Add APT repo yubikey
+    become: yes
+    tags:
+      - apt
+    apt_repository:
+      repo: ppa:yubico/stable
+      state: present
+
   - name: Add repo with nvidia drivers
     apt_repository:
       repo: ppa:graphics-drivers
@@ -33,6 +41,7 @@
       - apt
     apt:
       name: "{{ packages }}"
+      update_cache: yes
     vars:
       packages:
       - git
@@ -60,6 +69,7 @@
       - traceroute
       - simplescreenrecorder
       - libxml2-utils  # to get xmllint
+      - yubikey-manager
 
   - name: Add alias R
     tags:
