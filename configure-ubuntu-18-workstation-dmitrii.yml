@@ -289,6 +289,12 @@
       force: yes
       update: no
 
+  - name: Show date in top nav bar
+    become: no
+    tags:
+      - date
+    shell: gsettings set org.gnome.desktop.interface clock-show-date true
+
   - name: Install ripgrep from snap
     become: yes
     tags:
