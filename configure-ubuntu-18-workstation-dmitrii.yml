@@ -329,8 +329,10 @@
       version: v26
 
   - name: Install Slack
+    tags: slack
+    become: yes
     apt:
-      deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb
+      deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb
 
   - name: Install dbeaver
     become: yes
