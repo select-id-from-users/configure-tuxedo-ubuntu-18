@@ -70,6 +70,7 @@
       - simplescreenrecorder
       - libxml2-utils  # to get xmllint
       - yubikey-manager
+      - chrome-gnome-shell
 
   - name: Add alias R
     tags:
@@ -317,16 +318,6 @@
       path: ~/.local/share/gnome-shell/extensions
       state: directory
       mode: 0755
-
-  - name: Install `Put Window` GNOME shell extension
-    become: no
-    git:
-      repo: 'https://github.com/negesti/gnome-shell-extensions-negesti.git'
-      dest: ~/.local/share/gnome-shell/extensions/putWindow@clemens.lab21.org
-      clone: yes
-      force: yes
-      update: no
-      version: v26
 
   - name: Install Slack
     tags: slack
