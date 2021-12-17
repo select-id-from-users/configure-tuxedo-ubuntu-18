@@ -1,6 +1,11 @@
 ---
 - hosts: all
 
+  handlers:
+  - name: Update fonts cache
+    become: yes
+    shell: fc-cache --force
+
   tasks:
 
   - name: Add APT repo yubikey
@@ -400,6 +405,17 @@
       state: directory
       mode: 0755
 
+  - name: Install JuliaMono font
+    tags:
+      - fonts
+    become: no
+    unarchive:
+      src: https://github.com/cormullion/juliamono/releases/download/v0.043/JuliaMono-ttf.zip
+      dest: ~/.fonts/
+      remote_src: yes
+    notify:
+      - Update fonts cache
+
   - name: Install JetBrains Mono font
     tags:
       - fonts
@@ -408,6 +424,8 @@
       src: https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip
       dest: ~/.fonts/
       remote_src: yes
+    notify:
+      - Update fonts cache
 
   - name: Install B612 mono font
     tags:
@@ -417,9 +435,6 @@
       src: https://fonts.google.com/download?family=B612%20Mono
       dest: ~/.fonts/
       remote_src: yes
+    notify:
+      - Update fonts cache
 
-  - name: Update fonts cache
-    become: yes
-    tags:
-      - fonts
-    shell: fc-cache --force
